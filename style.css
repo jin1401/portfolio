@@ -317,6 +317,7 @@ p {
     border-radius: 4px;
     font-size: var(--font-regular);
     padding: 8px 48px;
+    position: relative;
 }
 
 .category__btn.selected,
@@ -338,9 +339,10 @@ p {
     height: 20px;
     display: inline-block;
     line-height: 20px;
-    position: relative;
-    left: 5px;
+    position: absolute;
     opacity: 0;
+    right: 16px;
+    top: 6px;
     transition: all var(--animation-duration) ease;
 }
     
@@ -505,8 +507,20 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+    :root {
+        /* Font size */
+        --font-large: 2rem;
+        --font-medium: 1rem;
+        --font-regular: 0.8rem;
+        --font-small: 0.5rem;
+        --font-micro: 0.3rem;
+    }
+
     .navbar__toggle-btn {
         display: block;
+        top: 16px;
+        right: 16px;
+        font-size: var(--font-medium);
     }
 
     #navbar {
@@ -518,7 +532,7 @@ p {
         flex-direction: column;
         text-align: center;
         width: 100%;
-        display: none;;
+        display: none;
     }
 
     .navbar__menu.open {
@@ -526,8 +540,15 @@ p {
         background-color: var(--color-blue);
     }
 
+    .section {
+        padding: 16px;
+        padding-top: 40px;
+    }
+
     .about__majors {
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
 
     .major {
@@ -538,12 +559,45 @@ p {
         flex-direction: column;
     }
 
+    .category__btn {
+        margin: 4px 0;
+        width: 100%;
+    }
+    
     .project {
         flex-grow: 1;
     }
 
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial__speach-bubble {
+        order: 1;
+    }
+
     .testimonial__avatar {
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonial__avatar:nth-child(even) {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .testimonial__avatar:nth-child(odd) {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .arrow-up {
+        width: 45px;
+        height: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        right: 16px;
+        bottom: 16px;
     }
 }
